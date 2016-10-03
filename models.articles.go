@@ -1,3 +1,5 @@
+//model.articles.go
+
 package main
 
 import (

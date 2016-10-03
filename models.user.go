@@ -1,3 +1,5 @@
+//models.user.go
+
 package main
 
 import "errors"
