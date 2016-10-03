@@ -4,7 +4,7 @@
 {{ template "header.html" .}}
 
     <!--Loop over the 'payload' variable (the list of articles)-->
-    {{ range .payload }}
+    {{range .payload }}
         <!--Create link to article based on article ID-->
         <a href="/article/view{{.ID}}">
             <!--Display title of the articles-->

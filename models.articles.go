@@ -8,7 +8,7 @@ type article struct {
 
 // Storing the article list in memory instead of DB, just 'cause
 var articleList = []article{
-	article{ID: 1, Title: "Love in the Time of the Apocalypse", Content: "A Homeric jaunt across the u/distopic wonderland of our future."},
+	article{ID: 1, Title: "Love in the Time of the Apocalypse", Content: "A Homeric jaunt across the (u/dis)topic volleyball courts of our future."},
 	article{ID: 2, Title: "The Land of Magical Thinking", Content: "Imps, mermaids, FDR, dryfly... All in a day's work for this government employee!"},
 }
 
