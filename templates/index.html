@@ -6,7 +6,7 @@
     <!--Loop over the 'payload' variable (the list of articles)-->
     {{range .payload }}
         <!--Create link to article based on article ID-->
-        <a href="/article/view{{.ID}}">
+        <a href="/article/view/{{.ID}}">
             <!--Display title of the articles-->
             <h2>{{.Title}}</h2>
         </a>

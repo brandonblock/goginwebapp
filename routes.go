@@ -7,5 +7,5 @@ func initializeRoutes() {
 	router.GET("/", showIndexPage)
 
 	//Handle requests for single articles
-	router.GET("/article/view/:articles_id", getArticle)
+	router.GET("/article/view/:article_id", getArticle)
 }
