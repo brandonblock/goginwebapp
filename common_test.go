@@ -12,6 +12,7 @@ import (
 )
 
 var tmpArticleList []article
+var tmpUserList []user
 
 // Test functions setup
 func TestMain(m *testing.M) {
@@ -48,9 +49,11 @@ func testHTTPResponse(t *testing.T, r *gin.Engine, req *http.Request, f func(w *
 // Copy article list into temp for testing
 func saveLists() {
 	tmpArticleList = articleList
+	tmpUserList = userList
 }
 
 // Restore the list from temp
-func restorLists() {
+func restoreLists() {
 	articleList = tmpArticleList
+	userList = tmpUserList
 }
