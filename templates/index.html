@@ -3,7 +3,16 @@
 <!--Embed the header-->
 {{ template "header.html" .}}
 
-    <h1>Hello Gin!</h1>
+    <!--Loop over the 'payload' variable (the list of articles)-->
+    {{ range .payload }}
+        <!--Create link to article based on article ID-->
+        <a href="/article/view{{.ID}}">
+            <!--Display title of the articles-->
+            <h2>{{.Title}}</h2>
+        </a>
+        <!--Display article contents-->
+        <p>{{.Content}}</p>
+    {{end}}
 
 <!--Embed footer-->
 {{ template "footer.html" .}}
