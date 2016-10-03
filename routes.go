@@ -4,5 +4,5 @@ package main
 
 func initializeRoutes() {
 	//Handle the index route
-	router.Get("/", showIndexPage)
+	router.GET("/", showIndexPage)
 }

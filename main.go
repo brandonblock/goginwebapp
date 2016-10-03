@@ -9,7 +9,7 @@ var router *gin.Engine
 func main() {
 
 	// Set default router
-	router = gin.Default
+	router = gin.Default()
 
 	// Process templates at initialization
 	router.LoadHTMLGlob("templates/*")
