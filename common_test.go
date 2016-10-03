@@ -32,7 +32,7 @@ func getRouter(withTemplates bool) *gin.Engine {
 }
 
 // Helper function to process a request and test its response
-func testHTTPResponse(t *testing, r *gin.Engine, req *http.Request, f func(w *httptest.ResponseRecorder) bool) {
+func testHTTPResponse(t *testing.T, r *gin.Engine, req *http.Request, f func(w *httptest.ResponseRecorder) bool) {
 
 	// Create a response recorder
 	w := httptest.NewRecorder()
