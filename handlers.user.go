@@ -40,3 +40,9 @@ func register(c *gin.Context) {
 			"ErrorMessage": err.Error()})
 	}
 }
+
+func showLoginPage(c *gin.Context) {}
+
+func performLogin(c *gin.Context) {}
+
+func logout(c *gin.Context) {}
