@@ -31,3 +31,7 @@ func getArticleByID(id int) (*article, error) {
 	}
 	return nil, errors.New("Article not found")
 }
+
+func createNewArticle(title, content string) (*article, error) {
+	return nil, nil
+}

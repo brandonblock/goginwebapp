@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
+	"net/url"
+	"strconv"
 	"strings"
 	"testing"
 )
@@ -29,4 +31,35 @@ func TestShowIndexPageUnauthenticated(t *testing.T) {
 
 		return statusOK && pageOK
 	})
+}
+
+func TestArticleCreationAuthenticated(t *testing.T) {
+	saveLists()
+	w := httptest.NewRecorder()
+
+	r := getRouter(true)
+
+	http.SetCookie(w, &http.Cookie{Name: "token", Value: "123"})
+
+	r.POST("/article/create", createArticle)
+
+	articlePayload := getArticlePOSTPayload()
+	req, _ := http.NewRequest("POST", "/article/create", strings.NewReader(articlePayload))
+	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Add("Content-Length", strconv.Itoa(len(articlePayload)))
+
+	r.ServeHTTP(w, req)
+
+	if w.Code != http.StatusOK {
+		t.Fail()
+	}
+	restoreLists()
+}
+
+func getArticlePOSTPayload() string {
+	params := url.Values{}
+	params.Add("title", "Test Article Title")
+	params.Add("content", "Test Article Content")
+
+	return params.Encode()
 }
