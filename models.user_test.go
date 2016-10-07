@@ -66,7 +66,7 @@ func TestUserValidity(t *testing.T) {
 		t.Fail()
 	}
 
-	if isUserValid("GoldBug", "1234") {
+	if isUserValid("Goldbug", "1234") {
 		t.Fail()
 	}
 
