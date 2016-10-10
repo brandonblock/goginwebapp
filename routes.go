@@ -19,7 +19,7 @@ func initializeRoutes() {
 	{
 		articleRoutes.GET("/view/:article_id", getArticle)
 		articleRoutes.GET("/create", showArticleCreationPage)
-		articleRouter.POST("/create", createArticle)
+		articleRoutes.POST("/create", createArticle)
 	}
 
 	//Handle requests for single articles
