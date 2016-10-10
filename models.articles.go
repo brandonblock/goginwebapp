@@ -33,5 +33,9 @@ func getArticleByID(id int) (*article, error) {
 }
 
 func createNewArticle(title, content string) (*article, error) {
-	return nil, nil
+	a := article{ID: len(articleList) + 1, Title: title, Content: content}
+
+	articleList = append(articleList, a)
+
+	return &a, nil
 }

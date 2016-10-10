@@ -21,7 +21,4 @@ func initializeRoutes() {
 		articleRoutes.GET("/create", showArticleCreationPage)
 		articleRoutes.POST("/create", createArticle)
 	}
-
-	//Handle requests for single articles
-	router.GET("/article/view/:article_id", getArticle)
 }
