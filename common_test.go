@@ -63,6 +63,6 @@ func testMiddlewareRequest(t *testing.T, r *gin.Engine, expectedHTTPCode int) {
 	req, _ := http.NewRequest("GET", "/", nil)
 
 	testHTTPResponse(t, r, req, func(w *httptest.ResponseRecorder) bool {
-		return W.Code == expectedHTTPCode
+		return w.Code == expectedHTTPCode
 	})
 }
